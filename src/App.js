@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
-import "./App.css";
-import AppRoutes from "./hooks/routes/AppRoutes";
+import logo from './logo.svg';
+import './App.css';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
   return <AppRoutes />;
