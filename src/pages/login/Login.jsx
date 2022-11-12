@@ -1,14 +1,37 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
   //hooks
-  const navigation = useNavigate();
+  // const navigation = useNavigate();
+  const [alertUsername, setAlertUsername] = useState('');
+  const [alertPassword, setAlertPassword] = useState('');
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const { authLogin } = useAuth();
 
   const submitLogin = (e) => {
     e.preventDefault();
-    navigation('chat');
+    // navigation('chat');
+    if (username.length <= 3) {
+      setAlertUsername('Username must be more than 3 characters');
+    } else if (password.length <= 3) {
+      setAlertPassword('Password must be more than 3 characters');
+    } else {
+      authLogin(username, password);
+    }
   };
+
+  console.log(username, password);
+
+  useEffect(() => {
+    if (username.length <= 3 || password.length >= 3) {
+      setAlertUsername();
+      setAlertPassword();
+    }
+  }, [username, password]);
 
   return (
     <div className="w-screen h-screen bg-gray-300 flex flex-col items-center">
@@ -24,31 +47,32 @@ const Login = () => {
         <form
           onSubmit={(e) => submitLogin(e)}
           className="w-full flex flex-col space-y-2">
-          {/* <div className="flex flex-col space">
-            <label className="text-xs font-medium">Username/Email</label> */}
+          {/* <label className="text-xs font-medium">Username</label> */}
           <input
             type="text"
             placeholder="Username"
             className="input input-bordered w-full max-w-sm"
+            onChange={(e) => setUsername(e.currentTarget.value)}
           />
-          {/* </div> */}
+          <p className="text-red-500">{alertUsername}</p>
           {/* <div className="flex flex-col space">
           <label className="text-xs font-medium">Password</label> */}
           <input
             type="password"
             placeholder="********"
             className="input input-bordered w-full max-w-sm"
+            onChange={(e) => setPassword(e.currentTarget.value)}
           />
+          <p className="text-red-500">{alertPassword}</p>
           <button className="btn btn-primary max-w-sm" type="submit">
             Login/Register
           </button>
           <button
             className="btn bg-white max-w-sm text-gray-600 hover:btn"
             type="button"
-            onClick={() => console.log('Uyey Km siapa')}>
+            onClick={() => console.log('You are logged in as a Guest')}>
             Login as Guest
           </button>
-          {/* </div> */}
         </form>
       </div>
     </div>
