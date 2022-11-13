@@ -44,36 +44,38 @@ const Login = () => {
         </div>
 
         {/* Form Login */}
-        <form
-          onSubmit={(e) => submitLogin(e)}
-          className="w-full flex flex-col space-y-2">
-          {/* <label className="text-xs font-medium">Username</label> */}
-          <input
-            type="text"
-            placeholder="Username"
-            className="input input-bordered w-full max-w-sm"
-            onChange={(e) => setUsername(e.currentTarget.value)}
-          />
-          <p className="text-red-500">{alertUsername}</p>
-          {/* <div className="flex flex-col space">
+        <div className="w-full flex flex-col justify-center">
+          <form
+            onSubmit={(e) => submitLogin(e)}
+            className="w-full flex flex-col space-y-2">
+            {/* <label className="text-xs font-medium">Username</label> */}
+            <input
+              type="text"
+              placeholder="Username"
+              className="input input-bordered w-full max-w-sm"
+              onChange={(e) => setUsername(e.currentTarget.value)}
+            />
+            <p className="text-red-500">{alertUsername}</p>
+            {/* <div className="flex flex-col space">
           <label className="text-xs font-medium">Password</label> */}
-          <input
-            type="password"
-            placeholder="********"
-            className="input input-bordered w-full max-w-sm"
-            onChange={(e) => setPassword(e.currentTarget.value)}
-          />
-          <p className="text-red-500">{alertPassword}</p>
-          <button className="btn btn-primary max-w-sm" type="submit">
-            Login/Register
-          </button>
-          <button
-            className="btn bg-white max-w-sm text-gray-600 hover:btn"
-            type="button"
-            onClick={() => console.log('You are logged in as a Guest')}>
-            Login as Guest
-          </button>
-        </form>
+            <input
+              type="password"
+              placeholder="********"
+              className="input input-bordered w-full max-w-sm"
+              onChange={(e) => setPassword(e.currentTarget.value)}
+            />
+            <p className="text-red-500">{alertPassword}</p>
+            <button className="btn btn-primary max-w-sm" type="submit">
+              Login/Register
+            </button>
+            <button
+              className="btn bg-white max-w-sm text-gray-600 hover:btn"
+              type="button"
+              onClick={() => console.log('You are logged in as a Guest')}>
+              Login as Guest
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

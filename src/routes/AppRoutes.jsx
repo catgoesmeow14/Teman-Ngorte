@@ -8,7 +8,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="dashboard" element={<Dashboard />} />
-      <Route path="chat" element={<Chat />} />
+      <Route path="/dashboard/chat" element={<Chat />} />
       <Route path="/" element={<Login />} />
     </Routes>
   );
