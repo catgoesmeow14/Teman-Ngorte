@@ -13,7 +13,13 @@ const Chat = () => {
 
   return (
     <div className="h-screen w-screen">
-      {<h1>{user.username}</h1>}
+      {
+        <h1 className="text-6xl text-center capitalize whitespace-pre-line">
+          {' '}
+          Hi, <a className="font-bold hover:text-sky-500">{user.username}</a>!
+          Welcome bro😎
+        </h1>
+      }
       {data.map((item) => (
         <div className="p-5">
           {/* <p className=" font-medium">Username : {item.username}</p>
