@@ -3,8 +3,7 @@ import useFetch from '../../hooks/useFetch';
 
 // tes get method
 const Chat = () => {
-  // const data = useFetch('http://localhost:5000/chat');
-  const data = useFetch('https://jsonplaceholder.typicode.com/posts');
+  const data = useFetch('https://chatbot-api-three.herokuapp.com/chat');
   console.log(data);
 
   const user = JSON.parse(localStorage.getItem('user'));
@@ -14,7 +13,7 @@ const Chat = () => {
 
   return (
     <div className="h-screen w-screen">
-      {<h1>{user.firstName}</h1>}
+      {<h1>{user.username}</h1>}
       {data.map((item) => (
         <div className="p-5">
           {/* <p className=" font-medium">Username : {item.username}</p>
