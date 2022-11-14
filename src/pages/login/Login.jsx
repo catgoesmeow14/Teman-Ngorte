@@ -46,7 +46,7 @@ const Login = () => {
         {/* Form Login */}
         <form
           onSubmit={(e) => submitLogin(e)}
-          className="ml-20 w-full flex flex-col space-y-2">
+          className="w-full flex flex-col space-y-2">
           {/* <label className="text-xs font-medium">Username</label> */}
           <input
             type="text"
