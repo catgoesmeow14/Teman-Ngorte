@@ -14,12 +14,9 @@ const Dashboard = () => {
   const navigation = useNavigate();
 
   const navigateChat = async () => {
-    await delay(2000);
     navigation('/chat');
     console.log('Masuk ke Chat sama Bot');
   };
-
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   return (
     <div className="w-screen h-screen bg-gray-300 flex flex-col items-center">
@@ -31,7 +28,7 @@ const Dashboard = () => {
            text-indigo-800 hover:text-sky-500 hover:text-8xl duration-400">
             {user.username}
           </span>
-          ! Welcome bro😎
+          ! Welcome 😇
         </h1>
 
         <div className="flex justify-center">

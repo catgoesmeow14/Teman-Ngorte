@@ -19,23 +19,25 @@ const Chat = () => {
           <div className="avatar">
             <div className=" w-[80px] rounded-full">
               <img
-                src="https://i.ibb.co/Dw3r0qc/Whats-App-Image-2022-11-14-at-16-46-46.jpg"
+                src="https://i.pinimg.com/564x/8c/b6/1f/8cb61f5c432e146e4b9aad26cc5effbb.jpg"
                 alt="avatar"
               />
             </div>
           </div>
-          <h1 className="font-bold text-4xl text-white capitalize">juwiii</h1>
+          <h1 className="font-bold text-4xl text-white capitalize">
+            TimpalBot
+          </h1>
         </div>
         <div className="w-full h-full px-7 py-4 flex flex-col justify-end">
           {/* People */}
           <BubbleChat
             from="self-start"
-            text="Hai apakah kamu ingin menonton konser ENHYPEN?"
+            text="Hai, aku TimpalBot, salam kenal!😎"
             color="bg-blue-300"
           />
           <BubbleChat
             from="self-end"
-            text="Iyaa nih, tabunganku masih 5ribu🤩"
+            text="Haloo TimpalBot, aku abis ditikung temen aku :("
             color="bg-green-300"
           />
         </div>
@@ -46,7 +48,7 @@ const Chat = () => {
             className="input input-bordered w-full text-2xl"
           />
           <button type="button" className="btn btn-primary btn-circle">
-            send ajah
+            send
           </button>
         </form>
       </div>
