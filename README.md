@@ -1,5 +1,9 @@
 # Kelompok 2 - Teman Ngorte.
 
+- Login
+- Dashboard
+- Chatroom
+
 ## Projek ini dapat diakses di [Website Teman Ngorte](https://chatbot-app-three.vercel.app/).
 
 ### Login
