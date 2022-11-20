@@ -1,18 +1,17 @@
 import { useCallback, useEffect, useState } from 'react';
 
-const useFetch = (url) => {
-  const [data, setData] = useState([]);
+const useFetch = (url: string) => {
+  const [data, setData] = useState<any>([]);
 
   const fetchData = useCallback(async () => {
-    const token = JSON.parse(localStorage.getItem('token'));
+    const token = JSON.parse(localStorage.getItem('user') || '');
 
     try {
       const response = await fetch(url, {
-        methode: 'GET',
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
-          'x-access-token': token,
           'Access-Control-Allow-Origin': '*',
         },
       });

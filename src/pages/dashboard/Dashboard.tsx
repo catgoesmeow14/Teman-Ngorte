@@ -1,12 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+import { LoginType } from '../../types/login-type';
 
 const Dashboard = () => {
   const data = useFetch('https://chatbot-api-three.herokuapp.com/chat');
   console.log(data);
 
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user: LoginType = JSON.parse(localStorage.getItem('user') || '');
 
   console.log('user data log');
   console.log(user);
@@ -25,8 +26,9 @@ const Dashboard = () => {
           Hi,{' '}
           <span
             className="transition-all delay-150 font-bold
-           text-indigo-800 hover:text-sky-500 hover:text-8xl duration-400">
-            {user.username}
+           text-indigo-800 hover:text-sky-500 hover:text-8xl duration-400"
+          >
+            {user.data.username}
           </span>
           ! Welcome 😇
         </h1>
@@ -38,7 +40,8 @@ const Dashboard = () => {
             hover:scale-110 transform-gpu hover:bg-blue-600 duration-400
             active:bg-blue-800 focus:outline-none focus:ring focus:ring-blue-300"
             type="button"
-            onClick={navigateChat}>
+            onClick={navigateChat}
+          >
             Yuk Curhat!
           </button>
         </div>

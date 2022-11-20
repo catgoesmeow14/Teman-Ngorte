@@ -1,16 +1,13 @@
 import React from 'react';
+import BubbleChat from '../../components/BubbleChat';
 import useFetch from '../../hooks/useFetch';
-import BubbleChat from './BubbleChat';
 
 // tes get method
 const Chat = () => {
   const chatList = useFetch('https://chatbot-api-three.herokuapp.com/chat');
   console.log(chatList);
 
-  const user = JSON.parse(localStorage.getItem('user'));
-
-  console.log('user data log');
-  console.log(user);
+  const user = JSON.parse(localStorage.getItem('user') || '');
 
   return (
     <div className="w-screen h-screen bg-gray-200 flex flex-col items-center">

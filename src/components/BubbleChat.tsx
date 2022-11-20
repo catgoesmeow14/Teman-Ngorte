@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const BubbleChat = ({ from, text, color }) => {
+type Props = {
+  from: string;
+  text: string;
+  color: string;
+};
+
+const BubbleChat: FC<Props> = ({ from, text, color }) => {
   const reverse =
     from === 'self-start' ? (
       <>
@@ -14,14 +20,16 @@ const BubbleChat = ({ from, text, color }) => {
           </div>
         </div>
         <div
-          className={` ${color} max-w-md px-3 py-3 rounded-r-lg rounded-tl-lg`}>
+          className={` ${color} max-w-md px-3 py-3 rounded-r-lg rounded-tl-lg`}
+        >
           <p className=" font-medium text-2xl break-words">{text}</p>
         </div>
       </>
     ) : (
       <>
         <div
-          className={` ${color} max-w-md px-3 py-3 rounded-l-lg rounded-tr-lg`}>
+          className={` ${color} max-w-md px-3 py-3 rounded-l-lg rounded-tr-lg`}
+        >
           <p className=" font-medium text-2xl break-words">{text}</p>
         </div>
         <div className="avatar">
