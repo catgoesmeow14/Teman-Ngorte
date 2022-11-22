@@ -16,7 +16,7 @@ const Chat = () => {
   const navigation = useNavigate();
 
   const navigateDashboard = async () => {
-    navigation('/');
+    navigation(-1);
     console.log('Balik ke dashboard');
   };
 

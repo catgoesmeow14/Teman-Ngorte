@@ -4,12 +4,14 @@ import { useNavigate } from 'react-router-dom';
 const useAuth = () => {
   const navigation = useNavigate();
   const [isLoading, setLoading] = useState(false);
+  const [disable, setDisable] = useState(true);
 
   const authLogin = async (username: string, password: string) => {
     try {
       setLoading(true);
+      setDisable(true);
       const response = await fetch(
-        'https://chatbot-api-three.herokuapp.com/loginOrRegister',
+        'https://chatbot-api-three.herokuapp.com/login',
         {
           method: 'POST',
           headers: {
@@ -25,7 +27,6 @@ const useAuth = () => {
       );
 
       const result = await response.json();
-      console.log(result);
       if (response.status >= 200 && response.status < 300) {
         localStorage.setItem('user', JSON.stringify(result));
         setLoading(false);
@@ -33,6 +34,7 @@ const useAuth = () => {
       } else {
         alert('Invalid username or password');
         setLoading(false);
+        setDisable(false);
       }
     } catch (error) {
       console.log(error);
@@ -42,6 +44,8 @@ const useAuth = () => {
   return {
     authLogin,
     isLoading,
+    disable,
+    setDisable,
   };
 };
 

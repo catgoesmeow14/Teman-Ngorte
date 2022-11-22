@@ -7,8 +7,7 @@ const Login = () => {
   const [alertUsername, setAlertUsername] = useState('');
   const [alertPassword, setAlertPassword] = useState('');
 
-  const { isLoading, authLogin } = useAuth();
-  const [disable, setDisable] = useState(true);
+  const { isLoading, authLogin, disable, setDisable } = useAuth();
 
   const [input, setInput] = useState({
     username: '',
@@ -38,9 +37,10 @@ const Login = () => {
       setDisable(true);
     }
 
-    if (input.username.length <= 3 || input.password.length >= 3) {
+    if (input.username.length <= 3 || input.password.length <= 3) {
       setAlertUsername('');
       setAlertPassword('');
+      setDisable(true);
     } else if (input.username === '' || input.password === '') {
       setDisable(true);
     } else {
