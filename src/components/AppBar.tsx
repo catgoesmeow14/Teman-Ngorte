@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import { IoLogOut } from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
   backItem?: ReactNode;
@@ -19,8 +20,10 @@ const AppBar: FC<Props> = ({ backItem, title, anotherItem }) => {
             active:bg-blue-800 focus:outline-none focus:ring focus:ring-blue-300"
           type="button"
           onClick={() => {
-            if (window.confirm('Are you sure you wish to logout?'))
+            if (window.confirm('Are you sure you wish to logout?')){
               console.log('berhasil logout');
+              logOut()
+            }
           }}
         >
           <IoLogOut
@@ -33,5 +36,10 @@ const AppBar: FC<Props> = ({ backItem, title, anotherItem }) => {
     </header>
   );
 };
+
+const logOut = () => {
+  localStorage.removeItem('token')
+  window.location.reload();
+}
 
 export default AppBar;
