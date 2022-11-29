@@ -1,13 +1,13 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
-import useAuth from '../../hooks/useAuth';
+import usePostAuth from '../../hooks/usePostAuth';
 
 const Login = () => {
   //hooks
   const [alertUsername, setAlertUsername] = useState('');
   const [alertPassword, setAlertPassword] = useState('');
 
-  const { isLoading, authLogin, disable, setDisable } = useAuth();
+  const { isLoading, authLogin, disable, setDisable } = usePostAuth();
 
   const [input, setInput] = useState({
     username: '',

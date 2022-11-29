@@ -1,13 +1,13 @@
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import BubbleChat from '../../components/BubbleChat';
-import useFetch from '../../hooks/useFetch';
+import useGetChat from '../../hooks/useGetChat';
 import { IoArrowBack, IoSend } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import AppBar from '../../components/AppBar';
 
 const Chat = () => {
   const [input, setInput] = useState('');
-  const chatList = useFetch('https://chatbot-api-three.herokuapp.com/chat');
+  const chatList = useGetChat('https://chatbot-api-three.herokuapp.com/chat');
   console.log(chatList);
   const ButtonStyle = { margin: '0px 7px' };
   // const iconStyles = { color: 'white' };

@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 
-const useFetch = (url: string) => {
+const useGetChat = (url: string) => {
   const [data, setData] = useState<any>([]);
 
   const fetchData = useCallback(async () => {
-    const token = JSON.parse(localStorage.getItem('user') || '');
+    const token = JSON.parse(localStorage.getItem('token') || '');
 
     try {
       const response = await fetch(url, {
@@ -29,4 +29,4 @@ const useFetch = (url: string) => {
   return data;
 };
 
-export default useFetch;
+export default useGetChat;

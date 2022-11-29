@@ -1,14 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
-import { LoginType } from '../../types/login-type';
+import useGetChat from '../../hooks/useGetChat';
 import AppBar from '../../components/AppBar';
+import { UserType } from '../../types/user-type';
 
 const Dashboard = () => {
-  const data = useFetch('https://chatbot-api-three.herokuapp.com/chat');
+  const data = useGetChat('https://chatbot-api-three.herokuapp.com/chat');
   console.log(data);
 
-  const user: LoginType = JSON.parse(localStorage.getItem('user') || '');
+  const user: UserType = JSON.parse(localStorage.getItem('user') || '');
 
   console.log('user data log');
   console.log(user);
@@ -28,7 +28,7 @@ const Dashboard = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center capitalize mb-10">
             Hi,{' '}
             <span className="transition-all delay-150 font-bold text-indigo-800 hover:text-sky-500 sm:hover:text-6xl md:hover:text-7xl lg:hover:text-8xl duration-400">
-              {user.data.username}
+              {user.username}
             </span>
             ! Welcome 😇
           </h1>

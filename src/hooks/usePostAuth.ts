@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { LoginResponseType } from '../types/login-response-type';
 
-const useAuth = () => {
+const usePostAuth = () => {
   const navigation = useNavigate();
   const [isLoading, setLoading] = useState(false);
   const [disable, setDisable] = useState(true);
@@ -10,29 +11,32 @@ const useAuth = () => {
     try {
       setLoading(true);
       setDisable(true);
+
+      const formData = new FormData();
+      formData.append('username', username)
+      formData.append('password', password)
+
       const response = await fetch(
-        'https://chatbot-api-three.herokuapp.com/login',
+        'https://cors-anywhere.herokuapp.com/https://api-teman-ngorte-wsph3rjooq-et.a.run.app/login', // TODO : THIS IS A HACK FOR CORS STUFFS. NEED TO IMPLEMENT CORS ON BACKEND SIDE
         {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
             Accept: 'application/json',
             'Access-Control-Allow-Origin': '*',
           },
-          body: JSON.stringify({
-            username: username,
-            password: password,
-          }),
+          body: formData,
         }
       );
 
-      const result = await response.json();
+      const result: LoginResponseType = await response.json();
+
       if (response.status >= 200 && response.status < 300) {
-        localStorage.setItem('user', JSON.stringify(result));
+        localStorage.setItem('token', JSON.stringify(result.data.access_token));
+        localStorage.setItem('user', JSON.stringify(result.data.data));
         setLoading(false);
         navigation('/');
       } else {
-        alert('Invalid username or password');
+        alert(result.message);
         setLoading(false);
         setDisable(false);
       }
@@ -49,4 +53,4 @@ const useAuth = () => {
   };
 };
 
-export default useAuth;
+export default usePostAuth;

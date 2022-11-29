@@ -1,25 +1,21 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { LoginType } from '../types/login-type';
 
 const PublicRoutes = () => {
-  const getUser = localStorage.getItem('user');
+  const getToken = localStorage.getItem('token');
   let token: string;
-  let user: LoginType;
 
-  if (typeof getUser === 'string') {
-    user = JSON.parse(getUser);
-    token = user.token;
+  if (typeof getToken === 'string') {
+    token = JSON.parse(getToken);
   }
-
-  const useAuthentication = () => {
+  const usePostAuthentication = () => {
     if (token) {
       return true;
     }
     return false;
   };
 
-  const isAuth = useAuthentication();
+  const isAuth = usePostAuthentication();
 
   return isAuth ? <Navigate to="/" /> : <Outlet />;
 };
