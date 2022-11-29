@@ -41,18 +41,22 @@ const Login = () => {
       setAlertUsername('');
       setAlertPassword('');
       setDisable(true);
-    } else if (input.username === '' || input.password === '') {
+    } else if (
+      input.username === '' ||
+      input.password === '' ||
+      isLoading === true
+    ) {
       setDisable(true);
     } else {
       setDisable(false);
     }
-  }, [input, isLoading]);
+  }, [input, isLoading, setDisable]);
 
   return (
     <div className="w-screen h-screen bg-gray-300 flex flex-col items-center">
-      <div className="w-[70%] h-[70%] bg-white m-auto grid grid-cols-2 content-center px-20 drop-shadow-xl rounded-md">
+      <div className="w-[90%] h-[70%] sm:w-[70%] sm:h-[70%] bg-white m-auto sm:grid flex flex-col sm:grid-cols-2 sm:content-center justify-center px-10 sm:px-20 drop-shadow-xl rounded-md">
         {/* Title */}
-        <div className="w-full flex flex-col items-center justify-center">
+        <div className="w-full flex flex-col items-center justify-center mb-16 sm:mb-0">
           <h1 className="text-black font-bold text-6xl">
             Teman<div>Ngorte.</div>
           </h1>
