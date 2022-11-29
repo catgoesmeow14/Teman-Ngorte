@@ -7,8 +7,10 @@ import AppBar from '../../components/AppBar';
 
 const Chat = () => {
   const [input, setInput] = useState('');
-  const chatList = useGetChat();
-  console.log(chatList);
+  const chatResponse = useGetChat();
+
+  console.log('[DEBUG] chatResponse : ', chatResponse);
+
   const ButtonStyle = { margin: '0px 7px' };
   // const iconStyles = { color: 'white' };
 
@@ -69,16 +71,23 @@ const Chat = () => {
           </div>
           <div className="w-full overflow-auto scroll-smooth px-5 sm:px-7 py-3 flex flex-col">
             {/* People */}
-            <BubbleChat from="self-end" text="Hai" />
+            {chatResponse.data?.data_message.map((element) => {
+              return (
+                <div>
+                  <BubbleChat from="self-start" text={element.bot_response} />
+                  <BubbleChat from="self-end" text={element.user_message} />
+                </div>
+              );
+            })}
+            {/* <BubbleChat from="self-end" text="Hai" color="bg-blue-300" />
             <BubbleChat
               from="self-start"
               text="Hai, aku TimpalBot, salam kenal!😎 Ayo drop curhatan kamu sekarang juga, kawan😉"
             />
             <BubbleChat
               from="self-end"
-              text="Haloo TimpalBot, minta tolong bangettt marahin aku dong plis sekasar2nya sampe kena mental😭 aku pengen banget lepas dari spyltr karena capek bayarnya tiap bulan dan jadi gak bisa nabung, tapi selalu gagal terussss😭😭😭 Ini tagihan sampe udah 1M, aku harus apaaa😭😭😭"
-            />
-            <BubbleChat from="self-start" text="ASTAGA TOBAT SIS😱" />
+              text="Haloo TimpalBot, aku abis ditikung temen aku :("
+            /> */}
           </div>
           <form className="flex flex-row px-5 py-5 space-x-2 items-center">
             <textarea
