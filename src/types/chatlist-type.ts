@@ -20,6 +20,27 @@ export class ChatListResponseDetailType {
     }
 }
 
+
+export class ChatListResponseSingleType {
+    data?: ChatListResponseSingleDetailType
+    message: string
+
+    public constructor(message: string, data?: ChatListResponseSingleDetailType){
+        this.data = data
+        this.message = message
+    }
+}
+
+export class ChatListResponseSingleDetailType {
+    data_message: ChatListDataType
+    user: UserType
+
+    public constructor(data_message: ChatListDataType, user: UserType){
+        this.data_message = data_message
+        this.user = user
+    }
+}
+
 export class ChatListDataType{
     id: number
     bot_response: string

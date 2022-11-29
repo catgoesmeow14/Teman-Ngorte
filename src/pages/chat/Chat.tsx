@@ -4,12 +4,16 @@ import useGetChat from '../../hooks/useGetChat';
 import { IoArrowBack, IoSend } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import AppBar from '../../components/AppBar';
+import usePostChat from '../../hooks/usePostChat';
+import { ChatListDataType } from '../../types/chatlist-type';
 
 const Chat = () => {
   const [input, setInput] = useState('');
+  // const [chatListData, setChatListData] = useState<Array<ChatListDataType>>([])
   const chatResponse = useGetChat();
+  const postChat = usePostChat();
 
-  console.log('[DEBUG] chatResponse : ', chatResponse);
+  var chatListData: ChatListDataType[] = chatResponse.data?.data_message ?? [];
 
   const ButtonStyle = { margin: '0px 7px' };
   // const iconStyles = { color: 'white' };
@@ -34,6 +38,21 @@ const Chat = () => {
   const divAutoHeight = () => {
     divRef.current.style.height = 'auto';
     divRef.current.style.height = divRef.current.scrollHeight + '%';
+  };
+
+  const submitMessage = async () => {
+    chatListData.push(
+      new ChatListDataType(new Date().getUTCMilliseconds(), '', '', input, '')
+    );
+    setInput(' ');
+
+    const result = await postChat.sendChat(input);
+
+    if (result.data != null) {
+      chatListData.pop();
+      chatListData.push(result.data.data_message);
+      setInput('');
+    }
   };
 
   useEffect(() => {
@@ -71,23 +90,22 @@ const Chat = () => {
           </div>
           <div className="w-full overflow-auto scroll-smooth px-5 sm:px-7 py-3 flex flex-col">
             {/* People */}
-            {chatResponse.data?.data_message.map((element) => {
+            {chatListData.map((element) => {
               return (
-                <div>
-                  <BubbleChat from="self-start" text={element.bot_response} />
-                  <BubbleChat from="self-end" text={element.user_message} />
+                <div key={element.id}>
+                  {element.user_message != '' ? (
+                    <BubbleChat from="self-end" text={element.user_message} />
+                  ) : (
+                    <div></div>
+                  )}
+                  {element.bot_response != '' ? (
+                    <BubbleChat from="self-start" text={element.bot_response} />
+                  ) : (
+                    <div></div>
+                  )}{' '}
                 </div>
               );
             })}
-            {/* <BubbleChat from="self-end" text="Hai" color="bg-blue-300" />
-            <BubbleChat
-              from="self-start"
-              text="Hai, aku TimpalBot, salam kenal!😎 Ayo drop curhatan kamu sekarang juga, kawan😉"
-            />
-            <BubbleChat
-              from="self-end"
-              text="Haloo TimpalBot, aku abis ditikung temen aku :("
-            /> */}
           </div>
           <form className="flex flex-row px-5 py-5 space-x-2 items-center">
             <textarea
@@ -103,6 +121,7 @@ const Chat = () => {
               type="button"
               style={ButtonStyle}
               className="btn btn-circle btn-primary btn-md"
+              onClick={() => submitMessage()}
             >
               <IoSend style={{ color: 'white', fontSize: '23px' }} />
             </button>
