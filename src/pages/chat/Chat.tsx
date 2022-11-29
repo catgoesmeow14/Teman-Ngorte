@@ -7,7 +7,7 @@ import AppBar from '../../components/AppBar';
 
 const Chat = () => {
   const [input, setInput] = useState('');
-  const chatList = useGetChat('https://chatbot-api-three.herokuapp.com/chat');
+  const chatList = useGetChat();
   console.log(chatList);
   const ButtonStyle = { margin: '0px 7px' };
   // const iconStyles = { color: 'white' };

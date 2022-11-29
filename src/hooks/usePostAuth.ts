@@ -1,23 +1,32 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LoginResponseType } from '../types/login-response-type';
+import { LoginGuestResponseType } from '../types/guestlogin-type';
+import { LoginResponseType } from '../types/login-type';
+import { UserType } from '../types/user-type';
 
 const usePostAuth = () => {
   const navigation = useNavigate();
   const [isLoading, setLoading] = useState(false);
   const [disable, setDisable] = useState(true);
 
-  const authLogin = async (username: string, password: string) => {
+  const authLogin = async (username: string, password: string, isGuest: boolean = false) => {
     try {
       setLoading(true);
       setDisable(true);
-
+      
       const formData = new FormData();
-      formData.append('username', username)
-      formData.append('password', password)
+
+      // TODO : THIS IS A HACK FOR CORS STUFFS. NEED TO IMPLEMENT CORS ON BACKEND SIDE
+      var loginUrl = 'https://cors-anywhere.herokuapp.com/https://api-teman-ngorte-wsph3rjooq-et.a.run.app/login-guest'
+      if(!isGuest){
+        loginUrl = 'https://cors-anywhere.herokuapp.com/https://api-teman-ngorte-wsph3rjooq-et.a.run.app/login'
+
+        formData.append('username', username)
+        formData.append('password', password)
+      }
 
       const response = await fetch(
-        'https://cors-anywhere.herokuapp.com/https://api-teman-ngorte-wsph3rjooq-et.a.run.app/login', // TODO : THIS IS A HACK FOR CORS STUFFS. NEED TO IMPLEMENT CORS ON BACKEND SIDE
+        loginUrl,
         {
           method: 'POST',
           headers: {
@@ -28,15 +37,23 @@ const usePostAuth = () => {
         }
       );
 
-      const result: LoginResponseType = await response.json();
-
       if (response.status >= 200 && response.status < 300) {
-        localStorage.setItem('token', JSON.stringify(result.data.access_token));
-        localStorage.setItem('user', JSON.stringify(result.data.data));
+        // We treat data from guest login api differently
+        if(isGuest){
+          const result: LoginGuestResponseType = await response.json();
+
+          localStorage.setItem('token', JSON.stringify(result.data.access_token));
+          localStorage.setItem('user', JSON.stringify(new UserType(0, result.data.username)));
+        }else{
+          const result: LoginResponseType = await response.json();
+
+          localStorage.setItem('token', JSON.stringify(result.data.access_token));
+          localStorage.setItem('user', JSON.stringify(new UserType(result.data.data.id, result.data.data.username)));
+        }
         setLoading(false);
         navigation('/');
       } else {
-        alert(result.message);
+        alert((await response.json())['message']);
         setLoading(false);
         setDisable(false);
       }

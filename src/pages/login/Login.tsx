@@ -21,8 +21,12 @@ const Login = () => {
     } else if (input.password.length <= 3) {
       setAlertPassword('Password must be more than 3 characters');
     } else {
-      authLogin(input.username, input.password);
+      authLogin(input.username, input.password, false);
     }
+  };
+
+  const submitLoginGuest = () => {
+    authLogin('', '', true);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -99,9 +103,9 @@ const Login = () => {
             // disabled={disable}
             className="transition-all delay-100 duration-400 btn bg-white max-w-md text-gray-600 hover:btn"
             type="button"
-            onClick={() => console.log('You are logged in as a Guest')}
+            onClick={() => submitLoginGuest()}
           >
-            Login as Guest
+            {isLoading ? <Loading /> : 'Login as Guest'}
           </button>
         </form>
       </div>

@@ -5,7 +5,7 @@ import AppBar from '../../components/AppBar';
 import { UserType } from '../../types/user-type';
 
 const Dashboard = () => {
-  const data = useGetChat('https://chatbot-api-three.herokuapp.com/chat');
+  const data = useGetChat();
   console.log(data);
 
   const user: UserType = JSON.parse(localStorage.getItem('user') || '');

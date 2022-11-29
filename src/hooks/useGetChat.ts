@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
 
-const useGetChat = (url: string) => {
+const useGetChat = () => {
   const [data, setData] = useState<any>([]);
 
   const fetchData = useCallback(async () => {
     const token = JSON.parse(localStorage.getItem('token') || '');
 
     try {
-      const response = await fetch(url, {
+      const response = await fetch('https://chatbot-api-three.herokuapp.com/chat', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ const useGetChat = (url: string) => {
     } catch (error) {
       console.log(error);
     }
-  }, [url]);
+  }, []);
 
   useEffect(() => {
     fetchData();
