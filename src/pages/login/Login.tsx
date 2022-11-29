@@ -54,7 +54,7 @@ const Login = () => {
 
   return (
     <div className="w-screen h-screen bg-gray-300 flex flex-col items-center">
-      <div className="w-[90%] h-[70%] sm:w-[70%] sm:h-[70%] bg-white m-auto sm:grid flex flex-col sm:grid-cols-2 sm:content-center justify-center px-10 sm:px-20 drop-shadow-xl rounded-md">
+      <div className="w-[90%] sm:w-[70%] py-32 sm:py-48 bg-white m-auto flex flex-col sm:grid sm:grid-cols-2 sm:content-center justify-center px-10 sm:px-20 drop-shadow-xl rounded-md">
         {/* Title */}
         <div className="w-full flex flex-col items-center justify-center mb-16 sm:mb-0">
           <h1 className="text-black font-bold text-6xl">
