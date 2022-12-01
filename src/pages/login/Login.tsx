@@ -100,7 +100,7 @@ const Login = () => {
 
           {/* Button Submit Guest*/}
           <button
-            // disabled={disable}
+            disabled={disable}
             className="transition-all delay-100 duration-400 btn bg-white max-w-md text-gray-600 hover:btn"
             type="button"
             onClick={() => submitLoginGuest()}
