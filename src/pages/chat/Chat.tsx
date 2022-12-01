@@ -32,6 +32,20 @@ const Chat = () => {
 
   const navigation = useNavigate();
 
+  const messagesEndRef = useRef<null | HTMLDivElement>(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({
+      block: "nearest",
+      inline: "center",
+      behavior: "smooth",
+    })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [chatListData]);
+
   const navigateDashboard = async () => {
     navigation(-1);
     console.log('Balik ke dashboard');
@@ -65,6 +79,7 @@ const Chat = () => {
   useEffect(() => {
     resizeTextArea();
     divAutoHeight();
+    scrollToBottom();
   }, [input]);
 
   return (
@@ -101,18 +116,19 @@ const Chat = () => {
               return (
                 <React.Fragment key={element.id}>
                   {element.user_message != '' ? (
-                    <BubbleChat text={element.user_message} time={getChatbubbleTime(element.user_timestamp)} />
+                    <BubbleChat isBot={false} text={element.user_message} time={getChatbubbleTime(element.user_timestamp)} />
                   ) : (
-                    <div></div>
+                    <></>
                   )}
                   {element.bot_response != '' ? (
-                    <BubbleChat text={element.bot_response} time={getChatbubbleTime(element.bot_timestamp)} />
+                    <BubbleChat isBot={true} text={element.bot_response} time={getChatbubbleTime(element.bot_timestamp)} />
                   ) : (
-                    <div></div>
+                    <></>
                   )}{' '}
                 </React.Fragment>
               );
             })}
+            <div ref={messagesEndRef} />
           </div>
           <form className="flex flex-row px-5 py-5 space-x-2 items-center">
             <textarea
