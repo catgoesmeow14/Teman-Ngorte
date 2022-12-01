@@ -6,36 +6,40 @@ import { LoginResponseType } from '../types/login-type';
 import { UserType } from '../types/user-type';
 
 const usePostChat = () => {
-  const sendChat = async (message: string): Promise<ChatListResponseSingleType> => {
-    var result: ChatListResponseSingleType = new ChatListResponseSingleType("no data")
+  const sendChat = async (
+    message: string
+  ): Promise<ChatListResponseSingleType> => {
+    var result: ChatListResponseSingleType = new ChatListResponseSingleType(
+      'no data'
+    );
 
     try {
       const token = JSON.parse(localStorage.getItem('token') || '');
-      
+
       const formData = new FormData();
-      formData.append('msg', message)
+      formData.append('msg', message);
 
       const response = await fetch(
-        'https://cors-anywhere.herokuapp.com/https://api-teman-ngorte-wsph3rjooq-et.a.run.app/chatbot-user',
+        // 'https://cors-anywhere.herokuapp.com/https://api-teman-ngorte-wsph3rjooq-et.a.run.app/chatbot-user',
+        'https://api-teman-ngorte-wsph3rjooq-et.a.run.app/chatbot-user',
         {
           method: 'POST',
           headers: {
             Accept: 'application/json',
             'Access-Control-Allow-Origin': '*',
-            'Authorization': 'Bearer '+token
+            Authorization: 'Bearer ' + token,
           },
           body: formData,
         }
       );
 
-      result = await response.json()
-      return result
-
+      result = await response.json();
+      return result;
     } catch (error) {
       console.log(error);
     }
 
-    return result
+    return result;
   };
   return {
     sendChat,
