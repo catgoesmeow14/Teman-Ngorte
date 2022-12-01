@@ -63,7 +63,7 @@ const Chat = () => {
 
   const submitMessage = async () => {
     chatListData.push(
-      new ChatListDataType(new Date().getUTCMilliseconds(), '', '', input, '')
+      new ChatListDataType(new Date().getUTCMilliseconds(), '', '', input, new Date().toUTCString())
     );
     setInput(' ');
 

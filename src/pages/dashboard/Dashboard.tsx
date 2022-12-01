@@ -25,38 +25,6 @@ const Dashboard = () => {
       <AppBar title="Dashboard" />
       <div className="w-screen h-screen bg-gray-300 flex flex-col items-center">
         <div className="w-[90%] sm:w-[70%] h-auto p-10 bg-white m-auto content-center px-15 drop-shadow-xl rounded-md">
-          {/* ================================================================== */}
-
-          <div className="chat chat-start">
-            <div className="chat-image avatar">
-              <div className="w-10 rounded-full">
-                <img src="https://placeimg.com/192/192/people" />
-              </div>
-            </div>
-            <div className="chat-header">
-              Obi-Wan Kenobi
-              <time className="text-xs opacity-50">12:45</time>
-            </div>
-            <div className="chat-bubble chat-bubble-info">
-              You were the Chosen One!
-            </div>
-            <div className="chat-footer opacity-50">Delivered</div>
-          </div>
-          <div className="chat chat-end">
-            <div className="chat-image avatar">
-              <div className="w-10 rounded-full">
-                <img src="https://placeimg.com/192/192/people" />
-              </div>
-            </div>
-            <div className="chat-header">
-              Anakin
-              <time className="text-xs opacity-50">12:46</time>
-            </div>
-            <div className="chat-bubble chat-bubble-success">I hate you!</div>
-            <div className="chat-footer opacity-50">Seen at 12:46</div>
-          </div>
-
-          {/* ================================================================== */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center capitalize mb-10">
             Hi,{' '}
             <span className="transition-all delay-150 font-bold text-indigo-800 hover:text-sky-500 sm:hover:text-6xl md:hover:text-7xl lg:hover:text-8xl duration-400">
