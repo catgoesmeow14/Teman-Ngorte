@@ -1,4 +1,10 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
+import React, {
+  ChangeEvent,
+  Fragment,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import BubbleChat from '../../components/BubbleChat';
 import useGetChat from '../../hooks/useGetChat';
 import { IoArrowBack, IoSend } from 'react-icons/io5';
@@ -79,7 +85,7 @@ const Chat = () => {
             <div className="avatar">
               <div className="w-[40px] sm:w-[40px] md:w-[60px] lg:w-[80px] rounded-full">
                 <img
-                  src="https://i.pinimg.com/564x/e3/47/45/e34745532089ceb929ddea369a063c8d.jpg"
+                  src="https://i.pinimg.com/564x/b7/d2/d3/b7d2d3dbfd736a344cf3620ec484a883.jpg"
                   alt="avatar"
                 />
               </div>
@@ -92,18 +98,18 @@ const Chat = () => {
             {/* People */}
             {chatListData.map((element) => {
               return (
-                <div key={element.id}>
+                <React.Fragment key={element.id}>
                   {element.user_message != '' ? (
-                    <BubbleChat from="self-end" text={element.user_message} />
+                    <BubbleChat text={element.user_message} />
                   ) : (
                     <div></div>
                   )}
                   {element.bot_response != '' ? (
-                    <BubbleChat from="self-start" text={element.bot_response} />
+                    <BubbleChat text={element.bot_response} />
                   ) : (
                     <div></div>
                   )}{' '}
-                </div>
+                </React.Fragment>
               );
             })}
           </div>
