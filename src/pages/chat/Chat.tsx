@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import AppBar from '../../components/AppBar';
 import usePostChat from '../../hooks/usePostChat';
 import { ChatListDataType } from '../../types/chatlist-type';
-import { getChatbubbleTime } from '../../utils/timeUtil'
+import { getChatbubbleTime } from '../../utils/timeUtil';
 
 const Chat = () => {
   const [input, setInput] = useState('');
@@ -32,18 +32,18 @@ const Chat = () => {
 
   const navigation = useNavigate();
 
-  const messagesEndRef = useRef<null | HTMLDivElement>(null)
+  const messagesEndRef = useRef<null | HTMLDivElement>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({
-      block: "nearest",
-      inline: "center",
-      behavior: "smooth",
-    })
-  }
+      block: 'nearest',
+      inline: 'center',
+      behavior: 'smooth',
+    });
+  };
 
   useEffect(() => {
-    scrollToBottom()
+    scrollToBottom();
   }, [chatListData]);
 
   const navigateDashboard = async () => {
@@ -63,7 +63,13 @@ const Chat = () => {
 
   const submitMessage = async () => {
     chatListData.push(
-      new ChatListDataType(new Date().getUTCMilliseconds(), '', '', input, new Date().toUTCString())
+      new ChatListDataType(
+        new Date().getUTCMilliseconds(),
+        '',
+        '',
+        input,
+        new Date().toUTCString()
+      )
     );
     setInput(' ');
 
@@ -84,10 +90,10 @@ const Chat = () => {
 
   return (
     <>
-      <div className="w-full h-screen bg-gray-200 flex flex-col items-center py-16">
+      <div className="w-full h-screen bg-gray-200 flex flex-col items-center py-6">
         <div
           ref={divRef}
-          className="bg-white m-auto max-h-full w-[90%] sm:w-[40%] flex flex-col drop-shadow-xl rounded-lg"
+          className="bg-white max-h-full m-auto w-[90%] sm:w-[80%] md:w-[70%] lg:w-[50%] flex flex-col drop-shadow-xl rounded-lg"
         >
           <div className="bg-primary py-2 sm:py-3 px-2 w-full flex flex-row items-center space-x-2 rounded-t-lg">
             <button
@@ -99,29 +105,36 @@ const Chat = () => {
             </button>
 
             <div className="avatar">
-              <div className="w-[40px] sm:w-[40px] md:w-[60px] lg:w-[80px] rounded-full">
+              <div className="w-[40px] md:w-[40px] lg:w-[50px] rounded-full">
                 <img
                   src="https://i.pinimg.com/564x/b7/d2/d3/b7d2d3dbfd736a344cf3620ec484a883.jpg"
                   alt="avatar"
                 />
               </div>
             </div>
-            <h1 className="font-bold text-xl md:text-3xl lg:text-4xl text-white capitalize">
+            <h1 className="font-bold text-xl lg:text-2xl text-white capitalize">
               TimpalBot
             </h1>
           </div>
           <div className="w-full overflow-auto scroll-smooth px-5 sm:px-7 py-3 flex flex-col">
-            {/* People */}
             {chatListData.map((element) => {
               return (
                 <React.Fragment key={element.id}>
                   {element.user_message != '' ? (
-                    <BubbleChat isBot={false} text={element.user_message} time={getChatbubbleTime(element.user_timestamp)} />
+                    <BubbleChat
+                      isBot={false}
+                      text={element.user_message}
+                      time={getChatbubbleTime(element.user_timestamp)}
+                    />
                   ) : (
                     <></>
                   )}
                   {element.bot_response != '' ? (
-                    <BubbleChat isBot={true} text={element.bot_response} time={getChatbubbleTime(element.bot_timestamp)} />
+                    <BubbleChat
+                      isBot={true}
+                      text={element.bot_response}
+                      time={getChatbubbleTime(element.bot_timestamp)}
+                    />
                   ) : (
                     <></>
                   )}{' '}
@@ -134,7 +147,7 @@ const Chat = () => {
             <textarea
               ref={textAreaRef}
               placeholder="Type your message..."
-              className="input input-bordered resize-none max-h-36 w-full sm:text-md md:text-xl lg:text-2xl"
+              className="input input-bordered resize-none max-h-36 w-full sm:text-md lg:text-xl"
               value={input}
               onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                 setInput(e.target.value)
