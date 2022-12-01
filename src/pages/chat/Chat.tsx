@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import AppBar from '../../components/AppBar';
 import usePostChat from '../../hooks/usePostChat';
 import { ChatListDataType } from '../../types/chatlist-type';
+import { getChatbubbleTime } from '../../utils/timeUtil'
 
 const Chat = () => {
   const [input, setInput] = useState('');
@@ -100,12 +101,12 @@ const Chat = () => {
               return (
                 <React.Fragment key={element.id}>
                   {element.user_message != '' ? (
-                    <BubbleChat text={element.user_message} />
+                    <BubbleChat text={element.user_message} time={getChatbubbleTime(element.user_timestamp)} />
                   ) : (
                     <div></div>
                   )}
                   {element.bot_response != '' ? (
-                    <BubbleChat text={element.bot_response} />
+                    <BubbleChat text={element.bot_response} time={getChatbubbleTime(element.bot_timestamp)} />
                   ) : (
                     <div></div>
                   )}{' '}

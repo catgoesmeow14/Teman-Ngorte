@@ -3,10 +3,11 @@ import React, { FC } from 'react';
 type Props = {
   // from: string;
   text: string;
+  time: string;
   // color: string;
 };
 
-const BubbleChat: FC<Props> = ({ text }) => {
+const BubbleChat: FC<Props> = ({ text, time }) => {
   return (
     <>
       {/* ================================================================== */}
@@ -22,7 +23,7 @@ const BubbleChat: FC<Props> = ({ text }) => {
         </div>
         <div className="chat-header">
           Heeseung Lee
-          <time className="text-xs opacity-50">12:45</time>
+          <time className="text-xs opacity-50">{time}</time>
         </div>
         <div className="chat-bubble chat-bubble-info">
           <p className="font-medium sm:text-md md:text-xl lg:text-2xl break-words">
@@ -44,7 +45,7 @@ const BubbleChat: FC<Props> = ({ text }) => {
         </div>
         <div className="chat-header">
           Doyoung Kim
-          <time className="text-xs opacity-50">12:46</time>
+          <time className="text-xs opacity-50">{time}</time>
         </div>
         <div className="chat-bubble chat-bubble-success">
           <p className="font-medium sm:text-md md:text-xl lg:text-2xl break-words">
