@@ -127,7 +127,7 @@ const Chat = () => {
                 TimpalBot
               </h1>
             </div>
-            <div className="w-full overflow-auto scroll-smooth px-5 sm:px-7 py-3 flex flex-col">
+            <div className="w-full overflow-auto scroll-smooth px-5 sm:px-7 py-5 flex flex-col">
               {chatListData?.map((element) => {
                 return (
                   <React.Fragment key={element.id}>
@@ -154,7 +154,7 @@ const Chat = () => {
               })}
               <div ref={messagesEndRef} />
             </div>
-            <form className="flex flex-row px-5 py-5 space-x-2 items-center">
+            <form className="flex flex-row px-5 py-4 mb-3 space-x-2 items-center">
               <textarea
                 ref={textAreaRef}
                 placeholder="Type your message..."
