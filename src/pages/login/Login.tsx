@@ -6,6 +6,7 @@ const Login = () => {
   //hooks
   const [alertUsername, setAlertUsername] = useState('');
   const [alertPassword, setAlertPassword] = useState('');
+  const [disableGuest, setDisableGuest] = useState(false);
 
   const { isLoading, authLogin, disable, setDisable } = usePostAuth();
 
@@ -37,10 +38,6 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (isLoading) {
-      setDisable(true);
-    }
-
     if (input.username.length <= 3 || input.password.length <= 3) {
       setAlertUsername('');
       setAlertPassword('');
@@ -51,7 +48,9 @@ const Login = () => {
       isLoading === true
     ) {
       setDisable(true);
+      setDisableGuest(true);
     } else {
+      setDisableGuest(false);
       setDisable(false);
     }
   }, [input, isLoading, setDisable]);
@@ -100,12 +99,12 @@ const Login = () => {
 
           {/* Button Submit Guest*/}
           <button
-            disabled={disable}
+            disabled={disableGuest}
             className="transition-all delay-100 duration-400 btn bg-white max-w-md text-gray-600 hover:btn"
             type="button"
             onClick={() => submitLoginGuest()}
           >
-            {isLoading ? <Loading /> : 'Login as Guest'}
+            Login as Guest
           </button>
         </form>
       </div>

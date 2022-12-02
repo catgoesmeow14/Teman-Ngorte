@@ -3,9 +3,11 @@ import { ChatListResponseType } from '../types/chatlist-type';
 
 const useGetChat = () => {
   const [data, setData] = useState<ChatListResponseType>({ message: '' });
+  const [loading, setLoading] = useState(false);
 
   const fetchData = useCallback(async () => {
     const token = JSON.parse(localStorage.getItem('token') || '');
+    setLoading(true);
 
     try {
       // const response = await fetch('https://cors-anywhere.herokuapp.com/https://api-teman-ngorte-wsph3rjooq-et.a.run.app/chatbot-user', {
@@ -22,8 +24,10 @@ const useGetChat = () => {
         }
       );
       setData(await parseJson(response));
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   }, []);
 
@@ -31,7 +35,7 @@ const useGetChat = () => {
     fetchData();
   }, [fetchData]);
 
-  return data;
+  return { loading, data };
 };
 
 async function parseJson(data: Response): Promise<ChatListResponseType> {
