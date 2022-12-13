@@ -90,12 +90,14 @@ const Login = () => {
               onChange={handleChange}
             />
             <span>
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-              </button>
+              <div className="tooltip tooltip-right" data-tip="Show Password">
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                </button>
+              </div>
             </span>
           </label>
           <p className="text-red-500">{alertPassword}</p>
