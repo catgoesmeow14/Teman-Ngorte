@@ -13,7 +13,7 @@ const AppBar: FC<Props> = ({ backItem, title, anotherItem }) => {
       <div className="flex flex-row w-full items-center justify-between">
         {backItem}
         <h1 className="ml-5 font-semibold text-2xl">{title}</h1>
-        <div className="tooltip tooltip-bottom tooltip-error" data-tip="Logout">
+        <div className="tooltip tooltip-left tooltip-error" data-tip="Logout">
           <button
             className="mr-7 transition ease-in-out delay-150 btn btn-sm sm:btn-sm md:btn-md lg:btn-md 
             text-white glass bg-rose-600 hover:-translate-y-1 
