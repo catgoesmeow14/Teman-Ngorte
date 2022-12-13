@@ -1,12 +1,14 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
 import usePostAuth from '../../hooks/usePostAuth';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
 const Login = () => {
   //hooks
   const [alertUsername, setAlertUsername] = useState('');
   const [alertPassword, setAlertPassword] = useState('');
-  const [disableGuest, setDisableGuest] = useState(false);
+  // const [disableGuest, setDisableGuest] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const { isLoading, authLogin, disable, setDisable } = usePostAuth();
 
@@ -48,9 +50,9 @@ const Login = () => {
       isLoading === true
     ) {
       setDisable(true);
-      setDisableGuest(true);
+      // setDisableGuest(true);
     } else {
-      setDisableGuest(false);
+      // setDisableGuest(false);
       setDisable(false);
     }
   }, [input, isLoading, setDisable]);
@@ -79,13 +81,23 @@ const Login = () => {
           />
           <p className="text-red-500">{alertUsername}</p>
 
-          <input
-            type="password"
-            placeholder="********"
-            className="input input-bordered w-full max-w-md"
-            onChange={handleChange}
-            name="password"
-          />
+          <label className="input-group">
+            <input
+              name="password"
+              type={showPassword ? 'text' : 'password'}
+              placeholder="********"
+              className="input input-bordered w-full max-w-md"
+              onChange={handleChange}
+            />
+            <span>
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+              </button>
+            </span>
+          </label>
           <p className="text-red-500">{alertPassword}</p>
 
           {/* Button Submit Login*/}
@@ -94,18 +106,19 @@ const Login = () => {
             className="transition-all delay-100 duration-400 btn btn-primary max-w-md"
             type="submit"
           >
-            {isLoading ? <Loading /> : 'Login/Register'}
+            {isLoading ? <Loading /> : 'Login'}
           </button>
 
           {/* Button Submit Guest*/}
-          <button
-            disabled={disableGuest}
-            className="transition-all delay-100 duration-400 btn bg-white max-w-md text-gray-600 hover:btn"
-            type="button"
-            onClick={() => submitLoginGuest()}
-          >
-            Login as Guest
-          </button>
+          {isLoading ? null : (
+            <button
+              className="transition-all delay-100 duration-400 btn bg-white max-w-md text-gray-600 hover:btn"
+              type="button"
+              onClick={() => submitLoginGuest()}
+            >
+              Login as Guest
+            </button>
+          )}
         </form>
       </div>
     </div>

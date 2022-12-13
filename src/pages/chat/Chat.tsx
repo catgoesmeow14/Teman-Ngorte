@@ -9,7 +9,6 @@ import BubbleChat from '../../components/BubbleChat';
 import useGetChat from '../../hooks/useGetChat';
 import { IoArrowBack, IoSend } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
-import AppBar from '../../components/AppBar';
 import usePostChat from '../../hooks/usePostChat';
 import { ChatListDataType } from '../../types/chatlist-type';
 import { getChatbubbleTime } from '../../utils/timeUtil';
@@ -107,13 +106,15 @@ const Chat = () => {
             className="bg-white max-h-full m-auto w-[90%] sm:w-[80%] md:w-[70%] lg:w-[50%] flex flex-col drop-shadow-xl rounded-lg"
           >
             <div className="bg-primary py-2 sm:py-3 px-2 w-full flex flex-row items-center space-x-2 rounded-t-lg">
-              <button
-                type="button"
-                className="btn btn-circle btn-primary"
-                onClick={navigateDashboard}
-              >
-                <IoArrowBack style={{ color: 'white', fontSize: '25px' }} />
-              </button>
+              <div className="tooltip tooltip-info" data-tip="Back">
+                <button
+                  type="button"
+                  className="btn btn-circle btn-primary"
+                  onClick={navigateDashboard}
+                >
+                  <IoArrowBack style={{ color: 'white', fontSize: '25px' }} />
+                </button>
+              </div>
 
               <div className="avatar">
                 <div className="w-[40px] md:w-[40px] lg:w-[50px] rounded-full">
@@ -164,14 +165,16 @@ const Chat = () => {
                   setInput(e.target.value)
                 }
               />
-              <button
-                type="button"
-                style={ButtonStyle}
-                className="btn btn-circle btn-primary btn-md"
-                onClick={() => submitMessage()}
-              >
-                <IoSend style={{ color: 'white', fontSize: '23px' }} />
-              </button>
+              <div className="tooltip tooltip-info" data-tip="Send">
+                <button
+                  type="button"
+                  style={ButtonStyle}
+                  className="btn btn-circle btn-primary btn-md"
+                  onClick={() => submitMessage()}
+                >
+                  <IoSend style={{ color: 'white', fontSize: '23px' }} />
+                </button>
+              </div>
             </form>
           </div>
         )}
