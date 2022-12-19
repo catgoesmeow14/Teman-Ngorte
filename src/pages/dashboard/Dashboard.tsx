@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useGetChat from '../../hooks/useGetChat';
 import AppBar from '../../components/AppBar';
 import { UserType } from '../../types/user-type';
+import { Helmet } from 'react-helmet';
 
 const Dashboard = () => {
   const data = useGetChat();
@@ -22,6 +23,9 @@ const Dashboard = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Dashboard | Teman Ngorte</title>
+      </Helmet>
       <AppBar title="Dashboard" />
       <div className="w-screen h-screen bg-gray-300 flex flex-col items-center">
         <div className="w-[90%] sm:w-[70%] h-auto p-10 bg-white m-auto content-center px-15 drop-shadow-xl rounded-md">

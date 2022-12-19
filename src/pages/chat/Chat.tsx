@@ -13,6 +13,7 @@ import usePostChat from '../../hooks/usePostChat';
 import { ChatListDataType } from '../../types/chatlist-type';
 import { getChatbubbleTime } from '../../utils/timeUtil';
 import RoundLoading from '../../components/RoundLoading';
+import { Helmet } from 'react-helmet';
 
 const Chat = () => {
   const [input, setInput] = useState('');
@@ -93,6 +94,9 @@ const Chat = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Chatroom | Teman Ngorte</title>
+      </Helmet>
       <div className="w-full h-screen bg-gray-200 flex flex-col items-center py-6">
         {loading ? (
           <div className="flex h-screen">
