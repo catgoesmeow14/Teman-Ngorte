@@ -20,12 +20,9 @@ const usePostAuth = () => {
 
       const formData = new FormData();
 
-      // TODO : THIS IS A HACK FOR CORS STUFFS. NEED TO IMPLEMENT CORS ON BACKEND SIDE
-      // var loginUrl = 'https://cors-anywhere.herokuapp.com/https://api-teman-ngorte-wsph3rjooq-et.a.run.app/login-guest'
       var loginUrl =
         'https://api-teman-ngorte-wsph3rjooq-et.a.run.app/login-guest';
       if (!isGuest) {
-        // loginUrl = 'https://cors-anywhere.herokuapp.com/https://api-teman-ngorte-wsph3rjooq-et.a.run.app/login'
         loginUrl = 'https://api-teman-ngorte-wsph3rjooq-et.a.run.app/login';
 
         formData.append('username', username);
@@ -52,7 +49,7 @@ const usePostAuth = () => {
           );
           localStorage.setItem(
             'user',
-            JSON.stringify(new UserType(0, result.data.username))
+            JSON.stringify(new UserType(0, result.data.username_alias))
           );
         } else {
           const result: LoginResponseType = await response.json();

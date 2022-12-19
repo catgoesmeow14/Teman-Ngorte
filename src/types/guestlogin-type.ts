@@ -1,10 +1,10 @@
 export interface LoginGuestResponseType {
-  data: LoginGuestDetailResponseType
+  data: LoginGuestDetailResponseType;
   message: string;
 }
 
 export interface LoginGuestDetailResponseType {
-  access_token: string
-  username: string
-  refresh_token: string
+  access_token: string;
+  refresh_token: string;
+  username_alias: string;
 }

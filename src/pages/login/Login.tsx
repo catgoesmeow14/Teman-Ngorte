@@ -7,7 +7,6 @@ const Login = () => {
   //hooks
   const [alertUsername, setAlertUsername] = useState('');
   const [alertPassword, setAlertPassword] = useState('');
-  // const [disableGuest, setDisableGuest] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   const { isLoading, authLogin, disable, setDisable } = usePostAuth();
@@ -90,7 +89,7 @@ const Login = () => {
               onChange={handleChange}
             />
             <span>
-              <div className="tooltip tooltip-right" data-tip="Show Password">
+              <div className="tooltip tooltip-left" data-tip="Show Password">
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
