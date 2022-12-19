@@ -119,7 +119,7 @@ const Chat = () => {
               <div className="avatar">
                 <div className="w-[40px] md:w-[40px] lg:w-[50px] rounded-full">
                   <img
-                    src="https://i.pinimg.com/564x/b7/d2/d3/b7d2d3dbfd736a344cf3620ec484a883.jpg"
+                    src="https://i.ibb.co/WgDDM7n/57cda57be47bc2718e117f348757ff5c-Cropped.jpg"
                     alt="avatar"
                   />
                 </div>

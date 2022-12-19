@@ -17,7 +17,7 @@ const BubbleChat: FC<Props> = ({ text, time, isBot }) => {
           <div className="chat-image avatar">
             <div className="w-[40px] md:w-[40px] lg:w-[50px] rounded-full">
               <img
-                src="https://i.pinimg.com/564x/b7/d2/d3/b7d2d3dbfd736a344cf3620ec484a883.jpg"
+                src="https://i.ibb.co/WgDDM7n/57cda57be47bc2718e117f348757ff5c-Cropped.jpg"
                 alt="avatar"
               />
             </div>
@@ -40,7 +40,7 @@ const BubbleChat: FC<Props> = ({ text, time, isBot }) => {
         <div className="chat-image avatar">
           <div className="w-[40px] md:w-[40px] lg:w-[50px] rounded-full">
             <img
-              src="https://i.pinimg.com/564x/2f/94/bb/2f94bb74dc62d6fe7f0865ce1afd5199.jpg"
+              src="https://i.pinimg.com/564x/b5/c0/19/b5c0191cbb9b7eed106de7230f960539.jpg"
               alt="avatar"
             />
           </div>

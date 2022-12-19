@@ -59,11 +59,14 @@ const Login = () => {
   return (
     <div className="w-screen h-screen bg-gray-300 flex flex-col items-center">
       <div className="w-[90%] sm:w-[70%] py-32 sm:py-48 bg-white m-auto flex flex-col sm:grid sm:grid-cols-2 sm:content-center justify-center px-10 sm:px-20 drop-shadow-xl rounded-md">
-        {/* Title */}
-        <div className="w-full flex flex-col items-center justify-center mb-16 sm:mb-0">
-          <h1 className="text-black font-bold text-6xl">
-            Teman<div>Ngorte.</div>
-          </h1>
+        {/* Logo */}
+        <div className="w-full flex flex-col items-center justify-center mb-8 sm:mb-0 mt-0">
+          <div className="w-[240px] sm:w-[180px] md:w-[240px] lg:w-[260px]">
+            <img
+              src="https://i.ibb.co/KVCpc8D/teman-ngorte-logo-02.png"
+              alt="avatar"
+            />
+          </div>
         </div>
 
         {/* Form Login */}
