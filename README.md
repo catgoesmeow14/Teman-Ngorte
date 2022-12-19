@@ -21,8 +21,8 @@ Teman Ngorte adalah aplikasi berbasis website sebagai media untuk mengekspresika
 ## Projek ini dapat diakses di **[Website Teman Ngorte](https://chatbot-app-three.vercel.app/)**
 
 ### **Login**
-> Username : `vidya`  
-Password : `aquagalon`
+> Username : `pencurhat`  
+Password : `curhatdong`
 
 ---
 
