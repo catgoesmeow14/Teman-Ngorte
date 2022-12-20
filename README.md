@@ -1,11 +1,10 @@
 <!-- # Kelompok 2 - Teman Ngorte. -->
-
+<a id="frontend"></a>
 <h1 align="center" width="100%">
     <b>Kelompok 2 - Teman Ngorte. <br>
     ※※※
 </h1>
 
-<a id="anggota-kelompok"></a>
 # **Anggota**
 - ### Vidya Chandradev - 1905551067 ([catgoesmeow14](https://github.com/catgoesmeow14))
 - ### Anak Agung Istri Prabhaisvari Sadhaka - 1905551044 ([prbisv](https://github.com/prbisv))
@@ -14,73 +13,13 @@
 - ### Ni Luh Gede Midya Frangginie - 1905551110 ([Midyafn](https://github.com/Midyafn)) 
   
 ---
-
-<a id="daftar-isi"></a>
-# **Daftar Isi**
-<details>
-<summary><b>(Klik untuk Detail)</b></summary>
-<!-- MarkdownTOC -->
-
-1. [Anggota Kelompok 2](#anggota-kelompok)
-2. [Daftar Isi](#daftar-isi)
-3. [Deskripsi Aplikasi](#deskripsi-aplikasi)
-4. [Tutorial](#tutorial)
-5. [Arsitektur Aplikasi](#arsitektur-aplikasi)
-6. [Dataset](#dataset)
-7. [Algoritma Deep Learning](#algoritma-deep-learning)
-    1. [LSTM](#lstm)
-       1. [Analisis Model LSTM](#analisis-model-lstm)
-       2. [Training dan Testing LSTM](#training-testing-lstm)
-    2. [biLSTM](#bilstm)
-       1. [Analisis Model biLSTM](#analisis-model-bilstm)
-       2. [Training dan Testing biLSTM](#training-testing-bilstm)
-    3. [BERT](#bert)
-       1. [Analisis Model BERT](#analisis-model-bert)
-       2. [Training dan Testing BERT](#training-testing-bert)
-    4. [Perbandingan Masing-masing Model](#perbandingan-model)
-    5. [Alasan Model yang Digunakan Paling Unggul](#alasan-model-unggul)
-
-<!-- /MarkdownTOC -->
-</details>
-
----
-
-<a id="deskripsi-aplikasi"></a>
-# **Deskripsi Aplikasi**
-
-#### Sekitar **19 juta** orang yang berumur >15 tahun menderita Mental Illness berdasarkan data Riskesdas 2018. Litbangkes juga menyebutkan bahwa angka kasus bunuh diri setiap tahunnya hampir mencapai **2 ribu** orang. Selain itu, situs Integrasi Layanan Rehabilitasi Sosial menyatakan Indonesia **hanya memiliki 48 rumah sakit jiwa**, dengan 32 milik negara dan 16 swasta. Bahkan **8** provinsi belum memiliki rumah sakit jiwa. Tidak hanya itu, jumlah tenaga kesehatan jiwa profesional yang tersedia hanya berkisar **1.053 orang** berdasarkan penelitian terbaru. 
-
-<p align="center" width="100%">
-   ◆◆◆
-</p>
-
-#### Penjabaran tersebut menunjukkan bahwa . . .
-
-<h2 align="center" width="100%">
-   <b>❗MENTAL  HEALTH  DI  INDONESIA MASIH CUKUP MENGKHAWATIRKAN❗<br>
-   . . .
-</h2>
-
-
- ### Untuk itulah kami menghadirkan **solusi**💡 berupa sebuah aplikasi yang dapat diakses **kapan saja**🕑🕝🕒, **di mana saja**🏙️🏡🏫, dan **oleh siapa saja**🧜🏻‍♀️🧑🏻‍💻👨🏻🕵🏻🫅🏻 **SECARA GRATIS**💸
-
-<h3 align="center" width="100%">
-    👇🏻👇🏻👇🏻
-</h3>
-
-## **Teman Ngorte.**
+# **Teman Ngorte.**
 
 <p align="center" width="100%">
     <img width="20%" src="https://i.ibb.co/FstxsVK/teman-ngorte-logo-01.png"> 
 </p>
 
-[Teman Ngorte](https://chatbot-app-three.vercel.app/) adalah aplikasi berbasis website sebagai media untuk mengekspresikan perasaan penggunanya agar dapat menghilangkan stres melalui fitur chatbot. Aplikasi ini dapat membantu Anda untuk mengungkapkan perasaan Anda, menghilangkan stres, dan membantu Anda untuk lebih sehat secara mental. Aplikasi ini memiliki User Interface dan User Experience yang baik sehingga menenangkan hati saat melihatnya dan mudah untuk digunakan.
-
-### <ins>**MENGAPA KAMI MEMBUAT TEMAN  NGORTE?** </ins> 
-
-<p align="center" width="100%">
-    <img width="67%" src="https://i.ibb.co/9rcBRG7/Teman-Ngorte-Kelompok-2-cropped.png"> 
-</p>
+[Teman Ngorte](https://chatbot-app-three.vercel.app/) adalah aplikasi berbasis website sebagai media untuk mengekspresikan perasaan penggunanya agar dapat menghilangkan stres melalui fitur chatbot.
 
 ---
 
@@ -92,90 +31,51 @@
 
 ---
 
-<a id="tutorial"></a>
-# **Tutorial**
-_under maintenance_
+# **Fitur Front-End✨**
 
----
+1. Tampilan sudah responsif untuk smartphone dan desktop📱💻
+2. Icon title merupakan logo Teman Ngorte dan title  sudah menyesuaikan page, seperti : `Login | Teman Ngorte` 
+3. Jika membuka rute manapun, misal '/chat' atau '/' di kondisi `belum login`, akan selalu kembali ke '/login'
+4. Jika membuka rute '/login'  di kondisi `sudah login`, misal di halaman dashboard atau chat, akan selalu back ke '/'.
+5. Halaman Login : 
+   1. logo Teman Ngorte. di sebelah kiri form login
+   2. Button See Password beserta Tooltip
+   3. Button login tidak dapat di-klik jika belum ada input-an dan saat proses loading ketika login, dengan tujuan mengurangi spam klik.
+   4. Button `login guest` hilang jika `login with username`
+   5. Button `login with username` hilang jika `login guest`
+   6. Ada `alert` yang didapat dari response API kalo username dan password ada yang keliru
+6. Halaman Dashboard : 
+   1. Ada component Appbar yang berisi nama page dan button logout
+   2. Ada tooltip di button logout
+   3. Menampilkan username yang jika dihover bisa membesar dan ukuran parentnya menyesuaikan
+   4. Jika login guest, dashboard menampilkan Guest sebagai username, di mana Guest ini merupakan `username alias` yang digunakan untuk menimpa username guest yang asli yang didapat dari fetching API
+   5. Button menuju chat memiliki animasi saat dihover
+7. Ada proses loading yang lamanya tergantung pada seberapa lama React me-render isi chat yang di-fetching dari API
+8. Halaman Chatroom : 
+   1. Chat akan auto scroll ke chat terbaru
+   2. Tanggal juga muncul jika chat sudah beumur lebih dari satu hari
+   3. Ada button back ke dashboar yang berisi tooltip jika dihover
+   4. Ada foto profil untuk bot dan pengguna
+   5. Warna bubble chat antara bot dan pengguna berbeda
+   6. Inputan chat sudah support multi-line, dan akan muncul scroll kalo lebih dari 5 line
+   7. Lebar dari input juga auto menyesuaikan dengan isi chat, dengan batas 5 baris.
+   8. Button send berisi tooltip jika dihover.
+   9. Chat auto scroll ke bawah jika chat terkirim dan saat mendapat respon dari bot
 
-<a id="arsitektur-aplikasi"></a>
-# **Arsitektur Aplikasi**
-_under maintenance_
->### 1. Login
->### 2. Dashboard
->### 3. Chatroom
-
----
-
-<a id="dataset"></a>
-# **Dataset**
-_under maintenance_
-
----
-
-<a id="algoritma-deep-learning"></a>
-# **Algoritma Deep Learning**
-<a id="lstm"></a>
-## **LSTM**
-_under maintenance_
-
-<a id="analisis-model-lstm"></a>
-### **Analisis Model LSTM**
-_under maintenance_
-
-<a id="training-testing-lstm"></a>
-### **Training dan Testing LSTM**
-_under maintenance_
-
----
-
-<a id="bilstm"></a>
-## **biLSTM**
-_under maintenance_
-
-<a id="analisis-model-bilstm"></a>
-### **Analisis Model biLSTM**
-_under maintenance_
-
-<a id="training-testing-bilstm"></a>
-### **Training dan Testing biLSTM**
-_under maintenance_
-
----
-
-<a id="bert"></a>
-## **BERT**
-_under maintenance_
-
-<a id="analisis-model-bert"></a>
-### **Analisis Model BERT**
-_under maintenance_
-
-<a id="training-testing-bert"></a>
-### **Training dan Testing BERT**
-_under maintenance_
-
----
-
-<a id="perbandingan-model"></a>
-## **Perbandingan Masing-masing Model**
-_under maintenance_
-
----
-
-<a id="alasan-model-unggul"></a>
-## **Alasan Model yang Digunakan Paling Unggul**
-_under maintenance_
+9. Logout :
+   1. Klik button back ke dashboard yang isi tooltip jika dihover
+   2. Ada tooltip di button logout yang ada di bagian kanan atas dashboard
+   3. Ada alert dari Frontend jika klik button logout
+   4. Tidak ada yang terjadi jika klik `cancel` pada alert
+   5. Klik button logout lagi. Klik `OK` pada alert, dan halaman akan kembali ke login
 
 ---
 
 <h2 align="center" width="100%">
     ※※※ <br>
-    <a href="#daftar-isi">☝🏻 <b>Kembali ke Daftar Isi</a> <br>
+    <a href="#frontend">☝🏻 <b>Kembali ke Atas</a> <br>
     ※※※
 </h2>
-
-<!-- ## [☝🏻 **Kembali ke Daftar Isi**](#daftar-isi) -->
 
 ---
 
