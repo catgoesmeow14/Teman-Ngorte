@@ -1,7 +1,7 @@
 <!-- # Kelompok 2 - Teman Ngorte. -->
-<a id="frontend"></a>
 <h1 align="center" width="100%">
-    <b>Kelompok 2 - Teman Ngorte. <br>
+   <a id="frontend"></a>
+   <b>Kelompok 2 - Teman Ngorte. </b><br>
     ※※※
 </h1>
 
@@ -16,22 +16,23 @@
 ## **Teman Ngorte.**
 
 <p align="center" width="100%">
-    <img width="20%" src="https://i.ibb.co/FstxsVK/teman-ngorte-logo-01.png"> 
+    <img width="10%" src="https://i.ibb.co/FstxsVK/teman-ngorte-logo-01.png"> 
 </p>
 
 [Teman Ngorte](https://chatbot-app-three.vercel.app/) adalah aplikasi berbasis website sebagai media untuk mengekspresikan perasaan penggunanya agar dapat menghilangkan stres melalui fitur chatbot.
 
 ---
 
-## **Website Teman Ngorte** ➡️ **[Teman Ngorte](https://chatbot-app-three.vercel.app/)**
+### **Website Teman Ngorte** ➡️ **[Teman Ngorte](https://chatbot-app-three.vercel.app/)**
 
-## **Login**
-> ### Username : `pencurhat`  
-> ### Password : `curhatdong`
+### **Login**
+> #### Username : `pencurhat`  
+> #### Password : `curhatdong`
 
 ---
 
 # **Fitur Front-End✨**
+<b>
 
 1. Tampilan sudah responsif untuk smartphone dan desktop📱💻
 2. Icon title merupakan logo Teman Ngorte dan title  sudah menyesuaikan page, seperti : `Login | Teman Ngorte` 
@@ -69,11 +70,13 @@
    4. Tidak ada yang terjadi jika klik `cancel` pada alert
    5. Klik button logout lagi. Klik `OK` pada alert, dan halaman akan kembali ke login
 
+</b>
+
 ---
 
 <h2 align="center" width="100%">
     ※※※ <br>
-    <a href="#frontend">☝🏻 <b>Kembali ke Atas</a> <br>
+    <a href="#frontend">☝🏻 <b>Kembali ke Atas</a> </b></br>
     ※※※
 </h2>
 
