@@ -62,11 +62,11 @@
 </h2>
 
 
-> ### Untuk itulah kami menghadirkan **solusi**💡 berupa sebuah aplikasi yang dapat diakses **kapan saja**🕑🕝🕒, **di mana saja**🏙️🏡🏫, dan **oleh siapa saja**🧜🏻‍♀️🧑🏻‍💻👨🏻🕵🏻🫅🏻 **SECARA GRATIS**💸
+ ### Untuk itulah kami menghadirkan **solusi**💡 berupa sebuah aplikasi yang dapat diakses **kapan saja**🕑🕝🕒, **di mana saja**🏙️🏡🏫, dan **oleh siapa saja**🧜🏻‍♀️🧑🏻‍💻👨🏻🕵🏻🫅🏻 **SECARA GRATIS**💸
 
-<h2 align="center" width="100%">
+<h3 align="center" width="100%">
     👇🏻👇🏻👇🏻
-</h2>
+</h3>
 
 ## **Teman Ngorte.**
 
@@ -79,7 +79,7 @@
 ### <ins>**MENGAPA KAMI MEMBUAT TEMAN  NGORTE?** </ins> 
 
 <p align="center" width="100%">
-    <img width="65%" src="https://i.ibb.co/9rcBRG7/Teman-Ngorte-Kelompok-2-cropped.png"> 
+    <img width="67%" src="https://i.ibb.co/9rcBRG7/Teman-Ngorte-Kelompok-2-cropped.png"> 
 </p>
 
 ---
