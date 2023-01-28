@@ -1,4 +1,4 @@
-<!-- # Kelompok 2 - Teman Ngorte. -->
+<!-- # Teman Ngorte. -->
 <h1 align="center" width="100%">
    <a id="frontend"></a>
    <b>Kelompok 2 - Teman Ngorte. </b><br>
