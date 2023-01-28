@@ -4,13 +4,6 @@
    <b>Kelompok 2 - Teman Ngorte. </b><br>
     ※※※
 </h1>
-
-## **Anggota**
-- #### Vidya Chandradev - 1905551067 ([catgoesmeow14](https://github.com/catgoesmeow14))
-- #### Anak Agung Istri Prabhaisvari Sadhaka - 1905551044 ([prbisv](https://github.com/prbisv))
-- #### I Putu Bayu Adhya Wiratama - 1905551059 ([TamaWira](https://github.com/TamaWira))
-- #### I Gusti Made Diva Widia Wiartha - 1905551081 ([divawidia](https://github.com/divawidia))
-- #### Ni Luh Gede Midya Frangginie - 1905551110 ([Midyafn](https://github.com/Midyafn)) 
   
 ---
 ## **Teman Ngorte.**
