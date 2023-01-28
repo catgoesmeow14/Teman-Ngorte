@@ -4,6 +4,8 @@
    <b>Teman Ngorte. </b><br>
     ※※※
 </h1>
+
+### **Detail bisa dibaca di :** **[What's Inside Teman Ngorte?](https://github.com/DL-Kel2-TemanNgorte)** 
   
 ---
 ## **Teman Ngorte.**
