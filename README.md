@@ -26,47 +26,43 @@
 
 ---
 
-# **Fitur Front-End✨**
-<b>
+# **Front-End Features** ✨
 
-1. Tampilan sudah responsif untuk smartphone dan desktop📱💻
-2. Icon title merupakan logo Teman Ngorte dan title  sudah menyesuaikan page, seperti : `Login | Teman Ngorte` 
-3. Jika membuka rute manapun, misal '/chat' atau '/' di kondisi `belum login`, akan selalu kembali ke '/login'
-4. Jika membuka rute '/login'  di kondisi `sudah login`, misal di halaman dashboard atau chat, akan selalu back ke '/'.
-5. Halaman Login : 
-   1. logo Teman Ngorte. di sebelah kiri form login
-   2. Button See Password beserta Tooltip
-   3. Button login tidak dapat di-klik jika belum ada input-an dan saat proses loading ketika login, dengan tujuan mengurangi spam klik.
-   4. Button `login guest` hilang jika `login with username`
-   5. Button `login with username` hilang jika `login guest`
-   6. Ada `alert` yang didapat dari response API kalo username dan password ada yang keliru
-6. Halaman Dashboard : 
-   1. Ada component Appbar yang berisi nama page dan button logout
-   2. Ada tooltip di button logout
-   3. Menampilkan username yang jika dihover bisa membesar dan ukuran parentnya menyesuaikan
-   4. Jika login guest, dashboard menampilkan Guest sebagai username, di mana Guest ini merupakan `username alias` yang digunakan untuk menimpa username guest yang asli yang didapat dari fetching API
-   5. Button menuju chat memiliki animasi saat dihover
-7. Ada proses loading yang lamanya tergantung pada seberapa lama React me-render isi chat yang di-fetching dari API
-8. Halaman Chatroom : 
-   1. Chat akan auto scroll ke chat terbaru
-   2. Tanggal juga muncul jika chat sudah beumur lebih dari satu hari
-   3. Ada button back ke dashboar yang berisi tooltip jika dihover
-   4. Ada foto profil untuk bot dan pengguna
-   5. Warna bubble chat antara bot dan pengguna berbeda
-   6. Inputan chat sudah support multi-line, dan akan muncul scroll kalo lebih dari 5 line
-   7. Lebar dari input juga auto menyesuaikan dengan isi chat, dengan batas 5 baris.
-   8. Button send berisi tooltip jika dihover.
-   9. Chat auto scroll ke bawah jika chat terkirim dan saat mendapat respon dari bot
-
-9. Logout :
-   1. Klik button back ke dashboard yang isi tooltip jika dihover
-   2. Ada tooltip di button logout yang ada di bagian kanan atas dashboard
-   3. Ada alert dari Frontend jika klik button logout
-   4. Tidak ada yang terjadi jika klik `cancel` pada alert
-   5. Klik button logout lagi. Klik `OK` pada alert, dan halaman akan kembali ke login
-
-</b>
-
+1. Responsive Design: The user interface is responsive and adapts to both smartphones and desktop devices (📱💻).
+2. Dynamic Page Title and Logo: The title and logo dynamically update based on the current page, such as "Login | Teman Ngorte".
+3. Redirect to Login: If a user visits any route without being logged in, they are automatically redirected to the '/login' page.
+4. Redirect from Login: If a user visits the '/login' page while already logged in, they are redirected back to the '/' page.
+5. Login Page:
+   - Teman Ngorte logo is displayed on the left side of the login form.
+   - "See Password" Button with Tooltip functionality.
+   - The login button is disabled until the user provides input. It also shows a loading state during the login process to prevent multiple clicks.
+   - "Login as Guest" button disappears when logging in with a username.
+   - "Login with Username" button disappears when logging in as a guest.
+   - An alert is displayed when the username or password is incorrect based on the API response.
+6. Dashboard Page:
+   - The app bar component displays the page name and a logout button.
+   - Tooltip is available on the logout button.
+   - Usernames are displayed and can be hovered over to enlarge. The parent container adjusts its size accordingly.
+   - If logged in as a guest, the dashboard displays "Guest" as the username. This is an alias used to override the original guest username obtained from the API.
+   - The button to navigate to the chatroom has an animated hover effect.
+7. Loading Process: The loading time depends on how long React takes to render the fetched chat content from the API.
+8. Chatroom Page:
+   - The chat automatically scrolls to the latest message.
+   - The date is displayed for messages that are more than one day old.
+   - A back button with a tooltip is available to return to the dashboard.
+   - User and bot profile pictures are displayed.
+   - Different bubble colors are used for user and bot chats.
+   - The chat input field supports multiple lines and displays a scroll bar if the content exceeds five lines.
+   - The input field width automatically adjusts to the content with a maximum limit of five lines.
+   - The "Send" button has a tooltip when hovered over.
+   - The chat auto-scrolls to the bottom after sending a message and receiving a response from the bot.
+9. Logout:
+   - Clicking the back button returns to the dashboard with a tooltip when hovered over.
+   - Tooltip is available on the logout button in the top-right corner of the dashboard.
+   - An alert is displayed on the frontend when the logout button is clicked.
+   - Nothing happens if the user cancels the alert.
+   - Clicking the logout button again and confirming with "OK" returns to the login page.
+   
 ---
 
 <h2 align="center" width="100%">
@@ -74,6 +70,13 @@
     <a href="#frontend">☝🏻 <b>Kembali ke Atas</a> </b></br>
     ※※※
 </h2>
+
+---
+
+
+Please note that contributions to this project are not currently available. This project is Vidya's personal project, and contributions from external contributors are not being accepted at this time. Additionally, there is no formal license associated with the project.
+
+For any inquiries or further information, please contact Vidya at vidyaachan14@gmail.com. We appreciate your understanding and interest!
 
 ---
 
